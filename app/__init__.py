@@ -1,0 +1,7 @@
+from app.models.empresa import Empresa
+from app.models.usuario import Usuario
+from app.models.ubicacion import Ubicacion
+from app.models.criticidad import Criticidad
+from app.models.maquinaria import Maquinaria
+from app.models.especificacion_tecnica import EspecificacionTecnica
+from app.models.documento_equipo import DocumentoEquipo
