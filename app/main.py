@@ -3,7 +3,10 @@ from fastapi import FastAPI
 from app.database import engine, Base
 
 # Importar todos los modelos para que SQLAlchemy los registre
-from app.models import Empresa, Usuario, Ubicacion, Criticidad, Maquinaria, EspecificacionTecnica, DocumentoEquipo, PlanMantenimiento, OrdenTrabajo
+from app.models import Empresa, Usuario, Ubicacion, Criticidad, Maquinaria, EspecificacionTecnica, DocumentoEquipo, PlanMantenimiento, OrdenTrabajo, AuditLog
+
+# auth router para autenticación
+from app.routers.auth import router as auth_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -14,6 +17,7 @@ async def lifespan(app: FastAPI):
     # Todo lo que va después del yield se ejecuta al APAGAR el servidor
 
 app = FastAPI(title="CMMS API", version="1.0.0", lifespan=lifespan)
+app.include_router(auth_router)
 
 @app.get("/")
 def root():

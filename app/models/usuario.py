@@ -8,7 +8,9 @@ import enum
 from app.database import Base
 
 class RolUsuario(enum.Enum):
+    superadmin = "superadmin"
     admin = "admin"
+    supervisor = "supervisor"
     tecnico = "tecnico"
 
 class Usuario(Base):

@@ -7,3 +7,4 @@ from app.models.especificacion_tecnica import EspecificacionTecnica
 from app.models.documento_equipo import DocumentoEquipo
 from app.models.plan_mantenimiento import PlanMantenimiento
 from app.models.orden_trabajo import OrdenTrabajo
+from app.models.audit_log import AuditLog
